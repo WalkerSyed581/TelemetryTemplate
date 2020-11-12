@@ -1,0 +1,770 @@
+:root{
+	--definingColor : #ff9185;
+	--lightBlack: rgba(39, 38, 38);
+	--whiteBorder: rgba(255,255,255,0.25);
+	--switchingBorder: rgba(0,0,0,0.25);
+	--switchingBackground: rgba(209, 209, 209, 0.74);
+}
+*{
+	box-sizing: border-box;
+}
+
+/****************************************************************
+Global Styles
+****************************************************************/
+body{
+	font-family: 'Open Sans',sans-serif;
+	line-height: 1.75;
+	word-spacing: 0.15em;
+}
+a{
+	color: white;
+	transition: 0.25s all ease-in-out;
+}
+a:hover{
+	color: var(--definingColor);
+}
+textarea{
+	resize: vertical;
+}
+button{
+	background-color: transparent;
+	color: white;
+	border: 1px solid white;
+	padding: 2.5%;
+	border-radius: 5px;
+}
+.featured-img{
+	border-radius: 5px;
+	width: 100%;
+}
+.roses-area{
+	background-image: url(image/roses.jpg);
+	background-size: cover;
+	background-position: center;
+    height: 400px;
+}
+
+.breadcrumb{
+	transition: 0.5s all ease-in-out;
+}
+.breadcrumb:hover{
+	cursor: pointer;
+	background-color: var(--whiteBorder);
+}
+
+/*****************************************************
+Header Styles
+*****************************************************/
+
+header{
+	background-color: transparent;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 1em;
+	position: fixed;
+	z-index: 1000;
+	transition: 0.25s background-color ease-in-out;
+}
+header button{
+	padding: 3%;
+	box-sizing: content-box;
+	width: 20%;
+	font-weight: none;
+	font-family: inherit;
+	font-size: 0.75em;
+}
+.headerSection{
+	border-top: 10px solid var(--definingColor);
+	background-image: url(image/mountains.jpg);
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+	height: 30em;
+	padding: 20% 25px 25px;
+	text-align: center;
+	color: white;
+}
+.headerSection div{
+	background-color: white;
+	color: var(--definingColor);
+	padding: 0.75em;
+	border-radius: 50%;
+}
+.headerSection h1{
+	border-bottom: 1px solid var(--whiteBorder);
+	padding-bottom: 1em;
+	font-weight: lighter;
+}
+.headerSection button{
+	padding: 3% 2.5%;
+	width: 100%;
+	margin-top: 5%;
+}
+header #navbar{
+	display: none;
+}
+header.scrolled a:hover{
+	color: black;
+}
+
+/******************************************************
+Navbar Styles
+******************************************************/
+#navPanel{
+	background-color: var(--lightBlack);
+	transition: 0.5s all ease-in-out;
+	transform: translateX(100%);
+	top: 0;
+	right: 0;
+	height: 100%;
+	overflow-y: auto;
+	width: 80%;
+	z-index: 1000;
+	position: fixed;
+	visibility: hidden;
+}
+.visible{
+	visibility: visible;
+	transform: translateX(0%);
+}
+nav ul{
+	list-style-type: none;
+	padding-left: 1.2em;
+	width: 90%;
+}
+#navPanel ul li{
+	border-bottom: 1px solid var(--whiteBorder);
+	
+	padding: 0.75em 0;
+}
+#navPanel ul li:last-child{
+	border: none;
+}
+#navPanel .nav-hide-button{
+	border:none;
+	margin: 5%;
+	color: var(--whiteBorder);
+}
+
+#navPanel .nav-hide-button:hover{
+	cursor: pointer;
+	color: white;
+}
+
+.fa-bars::before{
+	margin-right: 15%;
+}
+
+/*********************************************
+Vertical Cards Styles
+*********************************************/
+.v-cards{
+	margin: 10% 7.5%;
+}
+.v-cards ul{
+	list-style-type: none;
+	padding: 0;
+	font-size: 0.9em;
+	margin-top: 15%;
+}
+.v-cards ul li{
+	border-bottom: 1px solid var(--switchingBorder);
+	margin-bottom: 5%;
+	display: flex;
+}
+.v-cards h3{
+	margin:0;
+	color: var(--definingColor);
+	width: 100%;
+}
+.v-cards ul p{
+	margin-top:2%;
+}
+.v-cards span{
+	display: inline-block;
+	color: var(--definingColor);
+	margin-right: 2.5%;
+	width: 10%;
+	text-align: center;
+	margin-top: 2%;
+}
+
+/********************************************
+Cover Section Styles
+********************************************/
+
+.cover-section{
+	margin:0;
+	background-color: var(--definingColor);
+	padding: 10%;
+	text-align: center;
+	color: white;
+}
+.cover-section ul li{
+	border-bottom: 1px solid var(--whiteBorder);
+	margin-bottom: 5%;
+}
+.cover-section ul li:last-child{
+	border-bottom: none;
+}
+
+.cover-section ul p{
+	margin-top: 5%;
+	margin-bottom: 15%;
+	margin-left: 0;
+}
+
+.cover-section h3{
+	margin:0;
+	color: white;
+	width: 100%;
+	font-size: 3em;
+	font-weight: lighter;
+}
+
+
+/********************************************
+Switchable Section Styles
+********************************************/
+.switchable-cards{
+	margin: 10%;
+}
+.switchable-cards img{
+	width: 100%;
+	height: 100%;
+}
+.nav{
+	list-style-type: none;
+	padding-left: 0;	
+	margin:0;
+	font-size: 0.75em;
+	background-color: transparent;
+	display: flex;
+	flex-wrap: nowrap;
+	border-bottom: 1px solid var(--switchingBorder);
+}
+.nav a:first-child,.nav a:nth-child(2){
+	border-right: none;
+}
+.nav a{
+	color: black;
+	display: inline-block;
+	padding: 5%;
+	border: 1px solid var(--switchingBorder);
+	border-bottom: none;
+}
+.nav a.active{
+	position: relative;
+	top: 1px;
+}
+.switchable-cards .card{
+	margin: 10%;
+	margin-top: 0;
+	transition: 0.25s opacity cubic-bezier(.45,.05,.55,.95);
+}
+.switchable-cards .card a{
+	color: black;
+	border: 1px solid black;
+	padding: 2.5% 5%;
+	border-radius: 5px;
+	font-size: 0.8em;
+}
+.card-container{
+	border: 1px solid var(--switchingBorder);
+	border-top: none;
+	padding-top: 10%;
+}
+.nav .active{
+	background-color: white;
+	cursor: auto;
+}
+.nav a:not(.active){
+	background-color: var(--switchingBackground);
+}
+.switchable-cards .card.hide{
+	display: none;
+}
+
+/*****************************************************
+Tesimonails Area
+*****************************************************/
+#testimonials{
+	padding: 0;
+}
+#testimonial1{
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(image/blonde_orig.jpg);
+}
+#testimonial2{
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(image/tea_orig.jpg);
+}
+.testimonial{
+	background-size: cover;
+	padding: 10%;
+}
+.testimonial .fa-quote-left{
+	color: var(--whiteBorder);
+	padding: 0.5em;
+	border-radius: 50%;
+	margin: 1em 0 0.5em 0;
+	background-color: var(--definingColor);
+}
+.testimonial p{
+	margin-top:0;
+}
+.person{
+	color: var(--definingColor);
+	display: block;
+}
+.person + span{
+	font-size: 0.8em;
+}
+/***************************************************
+Pre Footer Area
+***************************************************/
+#pre-footer button{
+	color: black;
+	border: 1px solid black;
+	width: 100%;
+	padding: 5%;
+	font-size: 0.75em;
+}
+
+#pre-footer h3{
+	color: var(--lightBlack);
+	font-weight: normal
+}
+.smallText{
+	font-size: 0.85em;
+}
+/***************************************************
+Progress Bar Area
+***************************************************/
+.meter { 
+	height: 1px;
+	position: relative;
+}
+.meter > span {
+	display: block;
+	height: 100%;
+	overflow: hidden;
+}
+.percent{
+	color: var(--definingColor);
+	margin:0;
+	font-size: 0.75em;
+}
+/**************************************************
+Footer Area
+*************************************************/
+footer{
+	background-color: var(--definingColor);
+	padding: 5% 10%;
+	color: white;
+}
+footer h3{
+	font-weight: normal;
+}
+footer ul{
+	list-style-type: none;
+	font-size: 0.95em;
+	padding-left: 0em;;	
+}
+footer li{
+	padding-bottom: 2.5%;
+	margin-bottom: 10%;
+	display: flex;
+	justify-content: flex-start;
+}
+li span{
+	width: 85%;
+}
+footer .fa{
+	width: 7.5%;
+	padding-top: 2%;
+	margin-right: 3%;
+}
+.social-icons{
+	display: flex;
+}
+.social-icons a{
+	border: 1px solid white;
+	border-radius: 5px;
+	text-align: center;
+	padding: 5% 2%;
+	width: 17%;
+}
+.social-icons a:hover{
+	background-color: rgba(255,255,255,0.25);
+	color: white;
+}
+
+/**********************************************
+Form
+**********************************************/
+input,textarea{
+	background: transparent;
+	border: 1px solid var(--whiteBorder);
+	border-radius: 5px;
+	color: white;
+}
+form *{
+	width:  100%;
+	padding: 5%;
+	margin-bottom: 5%;
+	font-size: 0.85em;
+}
+form *:focus{
+	color: white;
+	border: 3px solid white;
+}
+.copy{
+	font-size: 0.75em;
+	text-align: center;
+	border-top: 1px solid var(--whiteBorder);
+	padding-top: 10%;
+}
+
+/************************************************
+Media Specific
+************************************************/
+.d-s{
+	display: none;
+}
+
+@media all and (min-width: 576px){
+	.d-s{
+		display: inline-block;
+	}
+	/******************************************
+	Nav Area
+	******************************************/
+	nav{
+		width: 30%;
+	}
+	/******************************************
+	Header Area
+	*******************************************/
+	.headerSection{
+		height: 37.5em;
+	}
+	.headerSection button{
+		width: 40%;
+	}
+	.headerSection h1{
+		width: 95%;
+	}
+	header button{
+		width: 12.5%;
+		padding: 2%;
+	}
+
+	/********************************************
+	Vertical Cards Styles
+	********************************************/
+
+	.v-cards ul{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		margin-bottom: 10%;
+	}
+	.v-cards ul li{
+		width: 50%;
+		margin-bottom: 0;
+	}
+	.v-cards ul li:nth-child(n+3){
+		border-bottom: none;
+		padding-top: 5%;
+	}
+	.v-cards ul li:nth-child(2n){
+		padding-left: 7.5%;
+		border-left: 1px solid var(--switchingBorder);
+	}
+	.v-cards ul li:nth-child(2n+1){
+		padding-right: 7.5%;
+		padding-bottom: 5%;
+	}
+	.v-cards span{
+		margin-top: 3.5%;
+		font-size: 2em;
+		margin-right: 10%;
+	}
+	.roses-area{
+		height: 500px;
+	}
+	/****************************************************
+	Cover Section Style
+	****************************************************/
+	.cover-section ul li{
+		display: flex;
+		flex-direction: column;
+	}
+	.v-cards.cover-section span {
+		margin-top: 3.5%;
+		font-size: 1em;
+		margin-right: 0;
+		display: inline-block;
+		color: white;
+		width: auto;
+		text-align: center;
+		margin-top: 0;
+	}
+	.v-cards.cover-section p{
+		margin-top: 12.5%;
+	}
+	.cover-section ul li:nth-child(2n){
+		border-left: 1px solid var(--whiteBorder);
+	}
+	/************************************************
+	Testimonial
+	************************************************/
+	.testimonial{
+		padding-bottom: 20%;
+	}
+	.testimonial p{
+		font-size: 1.75em;
+	}
+	/************************************************
+	Pre Footer Area
+	************************************************/
+	#pre-footer button{
+		width: 25%;
+		padding: 2.5%;
+	}
+	#pre-footer h3{
+		font-size: 1.5em;
+	}
+	/************************************************
+	Progrees Bar Areas
+	************************************************/
+	.meter span{
+		width: 100%;
+	}
+	/***********************************************
+	Footer Area
+	***********************************************/
+	footer .fa{
+		width: 5%;
+		padding-top: 1%;
+		margin-right: 1%;
+	}
+	.social-icons a{
+		border-radius: 5px;
+		text-align: center;
+		padding: 3%;
+		margin-left: 1.5%;
+		width: 10%;
+		font-size: 1.33em;
+	}
+	.social-icons a:first-child{
+		margin-left: 0;
+	}
+	/**************************************************
+	Contact Form
+	**************************************************/
+	footer form input[type="submit"]{
+		width: auto;
+		padding: 3% 7.5%;
+		border: 1px solid white;
+	}
+}
+
+
+@media all and (min-width:900px){
+	/***************************************************
+	Navbar Styles
+	***************************************************/
+	.breadcrumb{
+		display: none;
+	}
+	header #navbar{
+		display: block;	
+		width: 40%;
+	}
+	#navbar ul li{
+		display: inline-block;
+		flex-grow: 1;
+		
+	}
+	#navbar > ul{
+		padding-left: 0;
+		flex-wrap: nowrap;
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+	}
+	#navbar span.fa{
+		display: inline-block;
+		width: auto;
+		margin-right: 5%;
+	}
+	.dropdown{
+		position: relative;
+	}
+	.dropdown .dropdownArea{
+		display: none;
+		position: absolute;
+		opacity: 0;
+		padding-left: 0;
+		transition: 0.5s all ease-in-out;
+		background-color: white;
+		border-radius: 5px;
+		width: 150%;
+		text-align: center;
+	}
+	#navbar .dropdown .dropdownArea a{
+		display: block;
+		padding: 5%;
+		border-bottom: 1px solid var(--switchingBackground);
+	}
+	.dropdown .dropdownArea a:last-child{
+		border-bottom: none;
+	}
+	.dropdown .dropdownArea a{
+		color: black;
+		word-wrap: none;
+	}
+	.dropdown .dropdownArea a:hover{
+		color: white;
+		background-color: var(--definingColor);
+		word-wrap: none;
+	}
+	/*********************************************
+	Header Styles
+	*********************************************/
+	.headerSection{
+		height: 40em;
+	}
+	.headerSection button{
+		width: 25%;
+		padding: 1.75% 3%;
+		font-size: 0.9em;
+		transition: 0.25s all ease-in-out;
+	}	
+	.headerSection button:hover{
+		background-color: var(--whiteBorder);
+	}
+	.headerSection h1{
+		width: 75%;
+		margin: 0.67em auto;
+		font-size: 2.25em;
+	}
+	/************************************************
+	Vertical Cards Styles
+	************************************************/
+	.v-cards{
+		display: flex;
+		flex-direction: row-reverse;
+	}
+	.v-cards ul{
+		margin-bottom: 0;
+	}
+	.cards-container{
+		margin-left: 3.5em;
+		flex-basis: 175%;
+	}
+	.cards-container ul li:nth-child(n+3) {
+		padding-top: 2%;
+	}
+	.cards-container ul li:nth-child(2n+1) {
+		padding-bottom: 2%;	
+	}
+	/*************************************************
+	Cover Section
+	*************************************************/
+	.cover-section{
+		padding: 5%;
+	}
+	.cover-section ul{
+		flex-wrap: nowrap;
+		margin-top: 0;
+	}
+	.v-cards.cover-section ul li{
+		padding: 0;
+		border: none;
+		border-right: 1px solid var(--whiteBorder);
+	}
+	.v-cards.cover-section ul li:last-child{
+		border: none;
+	}
+	/*******************************************************
+	Switchable Cards
+	*******************************************************/
+	.switchable-cards{
+		margin: 10% 5%;
+	}
+	.switchable-cards .card{
+		display: flex;
+		flex-direction: row-reverse;
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+	.switchable-cards .card *{
+		flex: 1;
+	}
+	.switchable-cards .featured-img{
+		margin-left: 2.5%;
+	}
+	/*******************************************************
+	Testimonials
+	*******************************************************/
+	#testimonials{
+		display: flex;
+	}
+	.testimonial{
+		background-position: center;
+		padding: 7.5%;
+	}
+	/*******************************************************
+	Pre-Footer and Progress Bars
+	*******************************************************/
+	.pre-footer-container{
+		display: flex;
+		padding: 5%;
+	}
+	.pre-footer-container .v-cards{
+		display: block;
+		margin: 0;
+	}
+	.pre-footer-container > * {
+		flex: 1;
+	}
+	.pre-footer-container #pre-footer{
+		margin-right: 5%;
+	}
+	#pre-footer button {
+		width: 35%;
+		padding: 2.5% 5%;
+	}
+	/*********************************************************
+	Footer
+	*********************************************************/
+	footer{
+		padding: 2.5% 5%;
+	}
+	.footer-container{
+		display: flex;
+	}
+	.footer-container div:first-child{
+		margin-right: 2%;
+	}
+	footer .fa{
+		padding-top: 1.5%;
+		margin-right: 3.5%;
+	}
+	.social-icons a{
+		padding: 5% 2%;
+		width: 17%;
+	}
+	.footer-container .halved{
+		width: 47%;
+		display: inline-block;
+		padding: 3%;
+	}
+	.footer-container .halved:first-child{
+		margin-right: 2.5%;
+	}
+}
